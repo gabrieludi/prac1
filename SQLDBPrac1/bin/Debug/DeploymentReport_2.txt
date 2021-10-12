@@ -1,0 +1,29 @@
+﻿** Aspectos destacados
+     Tablas que se volverán a compilar
+       [dbo].[Alumno]
+       [dbo].[Apoderado]
+       [dbo].[Curso]
+       [dbo].[Inscrito]
+     Índices clúster que se van a quitar
+       Ninguno
+     Índices clúster que se van a crear
+       Ninguno
+     Posibles incidencias de datos
+       Ninguno
+
+** Acciones del usuario
+     Nueva compilación de tablas
+       [dbo].[Alumno] (Tabla)
+       [dbo].[Apoderado] (Tabla)
+       [dbo].[Curso] (Tabla)
+       [dbo].[Inscrito] (Tabla)
+
+** Acciones de compatibilidad
+     Quitar
+       [dbo].[FK_Apoderado_Alumno] (Clave externa)
+       [dbo].[FK_Inscrito_Alumno] (Clave externa)
+       [dbo].[FK_Inscrito_Curso] (Clave externa)
+     Crear
+       [dbo].[FK_Apoderado_Alumno] (Clave externa)
+       [dbo].[FK_Inscrito_Alumno] (Clave externa)
+       [dbo].[FK_Inscrito_Curso] (Clave externa)
