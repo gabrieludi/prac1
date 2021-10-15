@@ -87,7 +87,7 @@ namespace ORMPrac1
                 case 0:
                     if (indice >= oAlumno.Count)
                         indice = oAlumno.Count - 1;
-                    cadena = oAlumno[indice].Id.ToString() + ". " + oAlumno[indice].Nombre + ", de " + oAlumno[indice].Ciudad + ", " + oAlumno[indice].Edad + " aÃ±os.";
+                    cadena =  oAlumno[indice].Id.ToString() + " el nombre del estudiante es: " + oAlumno[indice].Nombre + ", la ciudad del alumno es: " + oAlumno[indice].Ciudad + ", el alumno tiene: " + oAlumno[indice].Edad + " años.";
                     break;
                 case 1:
                     if (indice >= oApoderado.Count)
@@ -96,13 +96,13 @@ namespace ORMPrac1
                     using (Model.DBPrac1Entities db = new Model.DBPrac1Entities())
                     {
                         oAlumno = db.ALUMNO.ToList();
-                        cadena = oApoderado[indice].Id.ToString() + ". " + oApoderado[indice].Nombre + ", es el|la opederado|a de " + oAlumno.Find(a => a.Id == (int)oApoderado[indice].Id_Alumno).Nombre;
+                        cadena = oApoderado[indice].Id.ToString() + " nombre del apoderado: " + oApoderado[indice].Nombre + ", es el apoderado de: " + oAlumno.Find(a => a.Id == (int)oApoderado[indice].Id_Alumno).Nombre;
                     }
                     break;
                 case 2:
                     if (indice >= oCurso.Count)
                         indice = oCurso.Count - 1;
-                    cadena = oCurso[indice].Cod.ToString() + ". " + oCurso[indice].Nombre + oCurso[indice].Fecha_Inicio + ", " + oCurso[indice].Duracion + " Horas" + oCurso[indice].Valor + " Pesos.";
+                    cadena = oCurso[indice].Cod.ToString() + " nombre del curso: " + oCurso[indice].Nombre + oCurso[indice].Fecha_Inicio + " duracion del curso " + oCurso[indice].Duracion + " Horas" + oCurso[indice].Valor + " Pesos.";
                     break;
                 case 3:
                     if (indice >= oInscrito.Count)
@@ -111,7 +111,7 @@ namespace ORMPrac1
                     { 
                         oAlumno = db.ALUMNO.ToList();
                         oCurso = db.CURSO.ToList();
-                        cadena = oInscrito[indice].Id.ToString() + ". " + oAlumno.Find(a => a.Id == (int)oInscrito[indice].Id_Alumno).Nombre + ". " + oCurso.Find(a => a.Cod == (int)oInscrito[indice].Cod_Curso).Nombre;
+                        cadena = oInscrito[indice].Id.ToString() + " el alumno: " + oAlumno.Find(a => a.Id == (int)oInscrito[indice].Id_Alumno).Nombre + " su curso; " + oCurso.Find(a => a.Cod == (int)oInscrito[indice].Cod_Curso).Nombre;
                     }
                     break;
             }
