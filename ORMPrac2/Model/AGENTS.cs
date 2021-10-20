@@ -14,11 +14,23 @@ namespace ORMPrac2.Model
     
     public partial class AGENTS
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public AGENTS()
+        {
+            this.CUSTOMER = new HashSet<CUSTOMER>();
+            this.ORDERS = new HashSet<ORDERS>();
+        }
+    
         public int AGENT_CODE { get; set; }
         public string AGENT_NAME { get; set; }
         public string WORKING_AREA { get; set; }
         public decimal COMISSION { get; set; }
         public string PHONE_NO { get; set; }
         public string COUNTRY { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CUSTOMER> CUSTOMER { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDERS> ORDERS { get; set; }
     }
 }

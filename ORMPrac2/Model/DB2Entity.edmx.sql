@@ -50,7 +50,7 @@ CREATE TABLE [dbo].[AGENTS] (
     [AGENT_CODE] int  NOT NULL,
     [AGENT_NAME] nvarchar(max)  NOT NULL,
     [WORKING_AREA] nvarchar(max)  NOT NULL,
-    [COMISSION] decimal(18,0)  NOT NULL,
+    [COMISSION] decimal(18,3)  NOT NULL,
     [PHONE_NO] nvarchar(max)  NOT NULL,
     [COUNTRY] nvarchar(max)  NOT NULL
 );
@@ -59,8 +59,8 @@ GO
 -- Creating table 'ORDERS'
 CREATE TABLE [dbo].[ORDERS] (
     [ORD_NUM] int  NOT NULL,
-    [ORD_AMOUNT] decimal(18,0)  NOT NULL,
-    [ADVANCE_AMOUNT] decimal(18,0)  NOT NULL,
+    [ORD_AMOUNT] decimal(18,3)  NOT NULL,
+    [ADVANCE_AMOUNT] decimal(18,3)  NOT NULL,
     [ORD_DATE] datetime  NOT NULL,
     [ORD_DESCRIPTION] nvarchar(max)  NOT NULL,
     [AGENT_CODE] nvarchar(max)  NOT NULL,
@@ -78,10 +78,10 @@ CREATE TABLE [dbo].[CUSTOMER] (
     [WORKING_AREA] nvarchar(max)  NOT NULL,
     [CUST_COUNTRY] nvarchar(max)  NOT NULL,
     [GRADE] int  NOT NULL,
-    [OPENING_AMT] decimal(18,0)  NOT NULL,
-    [RECEIVE_AMT] decimal(18,0)  NOT NULL,
-    [PAYMENT_AMT] decimal(18,0)  NOT NULL,
-    [OUTSTANDING_AMT] decimal(18,0)  NOT NULL,
+    [OPENING_AMT] decimal(18,3)  NOT NULL,
+    [RECEIVE_AMT] decimal(18,3)  NOT NULL,
+    [PAYMENT_AMT] decimal(18,3)  NOT NULL,
+    [OUTSTANDING_AMT] decimal(18,3)  NOT NULL,
     [PHONE_NO] nvarchar(max)  NOT NULL,
     [AGENTS_CODE] nvarchar(max)  NOT NULL,
     [AGENTSAGENT_CODE] int  NOT NULL

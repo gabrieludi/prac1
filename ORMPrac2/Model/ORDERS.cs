@@ -21,5 +21,10 @@ namespace ORMPrac2.Model
         public string ORD_DESCRIPTION { get; set; }
         public string AGENT_CODE { get; set; }
         public string CUST_CODE { get; set; }
+        public int CUSTOMERCUST_CODE { get; set; }
+        public int AGENTSAGENT_CODE { get; set; }
+    
+        public virtual CUSTOMER CUSTOMER { get; set; }
+        public virtual AGENTS AGENTS { get; set; }
     }
 }

@@ -14,6 +14,12 @@ namespace ORMPrac2.Model
     
     public partial class CUSTOMER
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public CUSTOMER()
+        {
+            this.ORDERS = new HashSet<ORDERS>();
+        }
+    
         public int CUST_CODE { get; set; }
         public string CUST_NAME { get; set; }
         public string CUST_CITY { get; set; }
@@ -26,5 +32,10 @@ namespace ORMPrac2.Model
         public decimal OUTSTANDING_AMT { get; set; }
         public string PHONE_NO { get; set; }
         public string AGENTS_CODE { get; set; }
+        public int AGENTSAGENT_CODE { get; set; }
+    
+        public virtual AGENTS AGENTS { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ORDERS> ORDERS { get; set; }
     }
 }
